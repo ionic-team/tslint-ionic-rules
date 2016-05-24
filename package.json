@@ -1,0 +1,31 @@
+{
+  "name": "tslint-ionic-rules",
+  "version": "0.0.1",
+  "description": "",
+  "main": "tslint.json",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/driftyco/tslint-ionic-rules.git"
+  },
+  "keywords": [
+    "tslint",
+    "rules",
+    "ionic",
+    "lint",
+    "linting",
+    "linter",
+    "tslint-plugin"
+  ],
+  "author": "Ionic",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/driftyco/tslint-ionic-rules/issues"
+  },
+  "homepage": "https://github.com/driftyco/tslint-ionic-rules#readme",
+  "dependencies": {
+    "tslint-eslint-rules": "^1.3.0"
+  },
+  "devDependencies": {
+    "typescript": "^1.8.10"
+  }
+}
