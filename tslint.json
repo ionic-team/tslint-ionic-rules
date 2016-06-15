@@ -17,6 +17,7 @@
     "no-var-keyword": false,
     "one-line": [
       true,
+      "check-else",
       "check-open-brace",
       "check-whitespace"
     ],
