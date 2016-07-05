@@ -7,7 +7,7 @@ Common TypeScript lint rules/preferences for Ionic.
 Install:
 
 ```bash
-npm i ionic-tslint-rules --save-dev
+npm i tslint-ionic-rules --save-dev
 ```
 
 Extend the rules from your `tslint.json` file.
