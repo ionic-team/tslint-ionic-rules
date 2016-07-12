@@ -2,6 +2,8 @@
 
 Common TypeScript lint rules/preferences for Ionic.
 
+* If you're using `gulp-tslint`, make sure you're using at least 5.0.0.
+
 ## Usage
 
 Install:
