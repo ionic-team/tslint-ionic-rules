@@ -59,6 +59,9 @@
     "no-inner-declarations": [
       true,
       "functions"
+    ],
+    "no-unused-variable": [
+      true
     ]
   }
 }
