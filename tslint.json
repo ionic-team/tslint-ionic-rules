@@ -11,6 +11,7 @@
       true,
       "spaces"
     ],
+    "no-consecutive-blank-lines": true,
     "no-debugger": true,
     "no-duplicate-variable": true,
     "no-eval": true,
