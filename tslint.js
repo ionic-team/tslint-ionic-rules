@@ -1,7 +1,8 @@
-{
-  "rulesDirectory": [
-    "node_modules/tslint-eslint-rules/dist/rules"
-  ],
+var path = require("path");
+
+module.exports = {
+  "extends": "tslint-eslint-rules",
+  "rulesDirectory": path.join(path.dirname(require.resolve("tslint-eslint-rules")), "dist/rules"),
   "rules": {
     "class-name": true,
     "comment-format": [
