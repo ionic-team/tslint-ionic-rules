@@ -24,7 +24,8 @@ module.exports = {
     "no-internal-module": true,
     "no-trailing-whitespace": true,
     "no-unused-variable": [
-      true
+      true,
+      {"ignore-pattern": "^_[0-9]*$"}
     ],
     "no-var-keyword": false,
     "one-line": [
