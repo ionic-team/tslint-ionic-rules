@@ -38,8 +38,8 @@ module.exports = {
     "ordered-imports": [
       true,
       {
-        "import-sources-order": "lowercase-last",
-        "named-imports-order": "lowercase-first"
+        "import-sources-order": "any",
+        "named-imports-order": "lowercase-last"
       }
     ],
     "quotemark": [
