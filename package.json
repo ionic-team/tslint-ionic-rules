@@ -5,7 +5,7 @@
   "main": "tslint.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/driftyco/tslint-ionic-rules.git"
+    "url": "git+https://github.com/ionic-team/tslint-ionic-rules.git"
   },
   "keywords": [
     "tslint",
@@ -21,9 +21,9 @@
   "author": "Ionic",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/driftyco/tslint-ionic-rules/issues"
+    "url": "https://github.com/ionic-team/tslint-ionic-rules/issues"
   },
-  "homepage": "https://github.com/driftyco/tslint-ionic-rules#readme",
+  "homepage": "https://github.com/ionic-team/tslint-ionic-rules#readme",
   "dependencies": {
     "tslint-eslint-rules": "^1.3.0"
   },
