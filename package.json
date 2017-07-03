@@ -1,6 +1,6 @@
 {
   "name": "tslint-ionic-rules",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Common TypeScript lint rules/preferences for Ionic.",
   "main": "tslint.js",
   "repository": {
