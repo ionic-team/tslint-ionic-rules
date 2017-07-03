@@ -23,13 +23,12 @@ module.exports = {
         "check-whitespace"
       ]
     },
-    "ordered-imports": [
-      true,
-      {
+    "ordered-imports": {
+      "options": {
         "import-sources-order": "any",
         "named-imports-order": "lowercase-last"
       }
-    ],
+    },
     "quotemark": {"options": ["single"]},
     "radix": true,
     "semicolon": {"options": ["always"]},
