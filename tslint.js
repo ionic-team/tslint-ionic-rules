@@ -11,7 +11,7 @@ module.exports = {
     "no-debugger": true,
     "no-duplicate-variable": true,
     "no-eval": true,
-    "no-inner-declarations": {"options": ["functions"]},
+    // "no-inner-declarations": {"options": ["functions"]},
     "no-internal-module": true,
     "no-trailing-whitespace": true,
     "no-var-keyword": false,
