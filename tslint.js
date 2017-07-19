@@ -15,6 +15,7 @@ module.exports = {
     "no-internal-module": true,
     "no-trailing-whitespace": true,
     "no-var-keyword": false,
+    "no-unused-variable": true,
     "one-line": {
       "options": [
         "check-catch",
