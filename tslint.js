@@ -51,7 +51,7 @@ module.exports = {
     },
     "prefer-conditional-expression": true,
     "prefer-const": true,
-    "quotemark": {"options": ["single"]},
+    "quotemark": {"options": ["single", "jsx-double"]},
     "radix": true,
     "semicolon": {"options": ["always"]},
     "triple-equals": {"options": ["allow-null-check"]},
