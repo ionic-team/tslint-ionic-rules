@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/ionic-team/tslint-ionic-rules#readme",
   "dependencies": {
-    "tslint-eslint-rules": "^4.1.1"
+    "tslint-eslint-rules": "^5.3.1"
   },
   "devDependencies": {
     "typescript": "^2.3.4"
