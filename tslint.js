@@ -59,6 +59,7 @@ module.exports = {
     "no-reference": true,
     "no-regex-spaces": true,
     "no-return-await": true,
+    "no-shadowed-variable": { "options": true, "severity": "warning" },
     "no-sparse-arrays": true,
     "no-string-throw": true,
     "no-switch-case-fall-through": true,
