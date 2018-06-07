@@ -35,45 +35,17 @@ module.exports = {
     "no-unused-variable": true,
     "no-var-keyword": true,
     "no-var-requires": true,
-    "one-line": {
-      "options": [
-        "check-catch",
-        "check-else",
-        "check-open-brace",
-        "check-whitespace"
-      ]
-    },
-    "ordered-imports": {
-      "options": {
-        "import-sources-order": "any",
-        "named-imports-order": "lowercase-last"
-      }
-    },
+    "one-line": { "options": ["check-catch", "check-else", "check-open-brace", "check-whitespace"] },
+    "ordered-imports": { "options": { "import-sources-order": "any", "named-imports-order": "lowercase-last" } },
     "prefer-conditional-expression": true,
     "prefer-const": true,
     "quotemark": {"options": ["single", "jsx-double"]},
     "radix": true,
     "semicolon": {"options": ["always"]},
     "triple-equals": {"options": ["allow-null-check"]},
-    "typedef-whitespace": {
-      "options": {
-        "call-signature": "nospace",
-        "index-signature": "nospace",
-        "parameter": "nospace",
-        "property-declaration": "nospace",
-        "variable-declaration": "nospace"
-      }
-    },
+    "typedef-whitespace": { "options": { "call-signature": "nospace", "index-signature": "nospace", "parameter": "nospace", "property-declaration": "nospace", "variable-declaration": "nospace" } },
     "use-isnan": true,
     "variable-name": {"options": ["ban-keywords"]},
-    "whitespace": {
-      "options": [
-        "check-branch",
-        "check-decl",
-        "check-operator",
-        "check-separator",
-        "check-type"
-      ]
-    },
+    "whitespace": { "options": ["check-branch", "check-decl", "check-operator", "check-separator", "check-type"] },
   }
 }
