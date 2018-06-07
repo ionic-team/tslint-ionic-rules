@@ -11,7 +11,7 @@ module.exports = {
   "rulesDirectory": path.join(path.dirname(require.resolve("tslint-eslint-rules")), "dist/rules"),
   "rules": {
     "adjacent-overload-signatures": true,
-    "align": true,
+    "align": [true, "elements", "members", "parameters", "statements"],
     "array-type": [true, "array"],
     "arrow-return-shorthand": true,
     "await-promise": true,
