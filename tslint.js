@@ -15,6 +15,7 @@ module.exports = {
     "ban-comma-operator": true,
     "class-name": true,
     "comment-format": {"options": ["check-space"]},
+    "deprecation": { "options": true, "severity": "warning" },
     "encoding": true,
     "eofline": true,
     "indent": {"options": ["spaces", 2]},
