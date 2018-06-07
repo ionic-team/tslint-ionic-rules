@@ -1,5 +1,11 @@
 const path = require("path");
 
+// NOTE: Do not add the following rules (see
+// https://github.com/ionic-team/tslint-ionic-rules/commit/065e3e9937104f6ec03e594adf762002616353df):
+// - no-unnecessary-type-assertion
+// - prefer-for-of
+// - no-conditional-assignment
+
 module.exports = {
   "extends": ["tslint-eslint-rules"],
   "rulesDirectory": path.join(path.dirname(require.resolve("tslint-eslint-rules")), "dist/rules"),
