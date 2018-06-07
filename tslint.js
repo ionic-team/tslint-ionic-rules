@@ -11,7 +11,7 @@ module.exports = {
     "comment-format": {"options": ["check-space"]},
     "encoding": true,
     "eofline": true,
-    "indent": {"options": ["spaces"]},
+    "indent": {"options": ["spaces", 2]},
     "jsdoc-format": [true, "check-multiline-start"],
     "linebreak-style": [true, "LF"],
     "new-parens": true,
