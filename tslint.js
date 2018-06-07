@@ -53,6 +53,7 @@ module.exports = {
     "no-switch-case-fall-through": true,
     "no-trailing-whitespace": true,
     "no-unexpected-multiline": true,
+    "no-unnecessary-initializer": true,
     "no-unsafe-finally": true,
     "no-unused-variable": true,
     "no-var-keyword": true,
