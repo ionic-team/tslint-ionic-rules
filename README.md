@@ -2,17 +2,21 @@
 
 Common TypeScript lint rules/preferences for Ionic.
 
-* If you're using `gulp-tslint`, make sure you're using at least 5.0.0.
-
 ## Usage
 
-Install:
-
 ```bash
-npm i tslint-ionic-rules --save-dev
+npm i -D tslint-ionic-rules
 ```
 
-Extend the rules from your `tslint.json` file.
+There is a strict flavor of lint rules, which we recommend:
+
+```json
+{
+  "extends": "tslint-ionic-rules/strict"
+}
+```
+
+Otherwise, extend the base rules:
 
 ```json
 {
