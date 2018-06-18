@@ -81,7 +81,6 @@ module.exports = {
     'no-empty-character-class': true,
     'no-ex-assign': true,
     'no-extra-boolean-cast': true,
-    'no-extra-semi': true,
     'no-inner-declarations': true,
     'no-invalid-regexp': true,
     'no-invalid-template-strings': true,
