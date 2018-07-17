@@ -67,7 +67,6 @@ module.exports = {
     'no-redundant-jsdoc': { 'options': true, 'severity': 'warning' },
     'no-return-await': true,
     'no-sparse-arrays': true,
-    'no-unused-variable': true, // TypeScript does this, but check and error anyway.
     'prefer-conditional-expression': true,
     'space-within-parens': 0,
 
