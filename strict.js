@@ -1,5 +1,8 @@
 module.exports = {
   'extends': ['./tslint'],
+  'rulesDirectory': [
+    "./dist"
+  ],
   'rules': {
 
     // ------
@@ -30,6 +33,10 @@ module.exports = {
     'prefer-for-of': true,
     'prefer-object-spread': true,
 
+    'strict-type-predicates': true,
+    'await-promise': true,
+    'strict-boolean-conditions': [true, 'allow-null-union', 'allow-undefined-union', 'allow-boolean-or-undefined']
+
     // TODO: https://github.com/palantir/tslint/issues/3375
     // 'no-implicit-dependencies': [true, 'optional'],
 
@@ -39,6 +46,5 @@ module.exports = {
     // 'prefer-method-signature': true,
     // 'restrict-plus-operands': true,
     // 'strict-type-predicates': true,
-
   },
 };
