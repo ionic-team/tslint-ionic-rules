@@ -25,7 +25,8 @@
   },
   "homepage": "https://github.com/ionic-team/tslint-ionic-rules#readme",
   "scripts": {
-    "build": "tsc --project ."
+    "build": "tsc --project .",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
     "@types/node": "^10.9.4",
