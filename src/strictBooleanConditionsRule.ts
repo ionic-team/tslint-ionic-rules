@@ -146,9 +146,7 @@ function walk(ctx: Lint.WalkContext<Options>, checker: ts.TypeChecker): void {
             case ts.SyntaxKind.DoStatement: {
                 const c = node as ts.IfStatement | ts.WhileStatement | ts.DoStatement;
                 // If it's a boolean binary expression, we'll check it when recursing.
-                if (!isBooleanBinaryExpression(c.expression)) {
-                    checkExpression(c.expression, c);
-                }
+                checkExpression(c.expression, c);
                 break;
             }
 
@@ -232,10 +230,6 @@ function handleUnion(type: ts.UnionType, options: Options): TypeFailure | undefi
                 return TypeFailure.AlwaysFalsy;
         }
     }
-    // Tracks whether it's possibly truthy.
-    let anyTruthy = false;
-    // Counts falsy kinds to see if there's a mix. Also tracks whether it's possibly falsy.
-    let seenFalsy = 0;
 
     for (const ty of type.types) {
         const kind = getKind(ty);
@@ -243,23 +237,8 @@ function handleUnion(type: ts.UnionType, options: Options): TypeFailure | undefi
         if (failure !== undefined) {
             return failure;
         }
-
-        switch (triState(kind)) {
-            case true:
-                anyTruthy = true;
-                break;
-            case false:
-                seenFalsy++;
-                break;
-            default:
-                anyTruthy = true;
-                seenFalsy++;
-        }
     }
-
-    return seenFalsy === 0 ? TypeFailure.AlwaysTruthy
-        : !anyTruthy ? TypeFailure.AlwaysFalsy
-        : !options.allowMix && seenFalsy > 1 ? TypeFailure.Mixes : undefined;
+    return undefined;
 }
 
 /** Fails if a kind of falsiness is not allowed. */
@@ -273,6 +252,8 @@ function failureForKind(kind: TypeKind, isInUnion: boolean, options: Options): T
             return options.allowNumber ? undefined : TypeFailure.Number;
         case TypeKind.Enum:
             return options.allowEnum ? undefined : TypeFailure.Enum;
+        case TypeKind.Promise:
+            return TypeFailure.Promise;
         case TypeKind.Null:
             return isInUnion && !options.allowNullUnion ? TypeFailure.Null : undefined;
         case TypeKind.Undefined:
@@ -300,6 +281,7 @@ export const enum TypeFailure {
     Undefined,
     Enum,
     Mixes,
+    Promise
 }
 
 const enum TypeKind {
@@ -313,6 +295,7 @@ const enum TypeKind {
     Undefined,
     Enum,
     AlwaysTruthy,
+    Promise
 }
 
 /** Divides a type into always true, always false, or unknown. */
@@ -332,6 +315,7 @@ function triState(kind: TypeKind): boolean | undefined {
             return false;
 
         case TypeKind.AlwaysTruthy:
+        case TypeKind.Promise:
             return true;
     }
 }
@@ -340,6 +324,7 @@ function getKind(type: ts.Type): TypeKind {
     return is(ts.TypeFlags.String) ? TypeKind.String
         : is(ts.TypeFlags.Number) ? TypeKind.Number
         : is(ts.TypeFlags.Boolean) ? TypeKind.Boolean
+        : isObject('Promise') ? TypeKind.Promise
         : is(ts.TypeFlags.Null) ? TypeKind.Null
         : is(ts.TypeFlags.Undefined | ts.TypeFlags.Void) ? TypeKind.Undefined // tslint:disable-line:no-bitwise
         : is(ts.TypeFlags.EnumLike) ? TypeKind.Enum
@@ -353,6 +338,9 @@ function getKind(type: ts.Type): TypeKind {
 
     function is(flags: ts.TypeFlags) {
         return isTypeFlagSet(type, flags);
+    }
+    function isObject(name: string) {
+        return (type.getSymbol() && type.getSymbol().getName() === name)
     }
 }
 
@@ -453,6 +441,7 @@ function showTypeFailure(ty: TypeFailure, unionType: boolean, strictNullChecks: 
         case TypeFailure.Null: return `${is} null`;
         case TypeFailure.Undefined: return `${is} undefined`;
         case TypeFailure.Enum: return `${is} an enum`;
+        case TypeFailure.Promise: return "promise handled as boolean expression";
         case TypeFailure.Mixes: return "unions more than one truthy/falsy type";
     }
 }
