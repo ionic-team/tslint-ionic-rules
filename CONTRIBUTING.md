@@ -5,6 +5,5 @@ PRs welcome!
 ## Publish
 
 ```
-npm version patch
-npm publish
+npm run release
 ```

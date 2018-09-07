@@ -31,6 +31,7 @@
   "homepage": "https://github.com/ionic-team/tslint-ionic-rules#readme",
   "scripts": {
     "build": "tsc --project .",
+    "release": "np",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
@@ -38,6 +39,7 @@
     "tslint-eslint-rules": "^5.3.1"
   },
   "devDependencies": {
+    "np": "^3.0.4",
     "tslint": "^5.10.0",
     "typescript": "^3.0.3"
   },
