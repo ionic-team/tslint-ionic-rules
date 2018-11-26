@@ -321,17 +321,13 @@ function triState(kind: TypeKind): boolean | undefined {
 }
 
 function getKind(type: ts.Type): TypeKind {
-    return is(ts.TypeFlags.String) ? TypeKind.String
-        : is(ts.TypeFlags.Number) ? TypeKind.Number
+    return is(ts.TypeFlags.StringLike) ? TypeKind.String
+        : is(ts.TypeFlags.NumberLike) ? TypeKind.Number
         : is(ts.TypeFlags.Boolean) ? TypeKind.Boolean
         : isObject('Promise') ? TypeKind.Promise
         : is(ts.TypeFlags.Null) ? TypeKind.Null
         : is(ts.TypeFlags.Undefined | ts.TypeFlags.Void) ? TypeKind.Undefined // tslint:disable-line:no-bitwise
         : is(ts.TypeFlags.EnumLike) ? TypeKind.Enum
-        : is(ts.TypeFlags.NumberLiteral) ?
-            (numberLiteralIsZero(type as ts.NumberLiteralType) ? TypeKind.FalseNumberLiteral : TypeKind.AlwaysTruthy)
-        : is(ts.TypeFlags.StringLiteral) ?
-            (stringLiteralIsEmpty(type as ts.StringLiteralType) ? TypeKind.FalseStringLiteral : TypeKind.AlwaysTruthy)
         : is(ts.TypeFlags.BooleanLiteral) ?
             ((type as ts.IntrinsicType).intrinsicName === "true" ? TypeKind.AlwaysTruthy : TypeKind.FalseBooleanLiteral)
         : TypeKind.AlwaysTruthy;
@@ -344,19 +340,6 @@ function getKind(type: ts.Type): TypeKind {
     }
 }
 
-function numberLiteralIsZero(type: ts.NumberLiteralType): boolean {
-    // for compatibility with typescript@<2.4.0
-    return type.value !== undefined ? type.value === 0 : (type as any).text === "0";
-}
-function stringLiteralIsEmpty(type: ts.StringLiteralType): boolean {
-    // for compatibility with typescript@<2.4.0
-    return (type.value !== undefined ? type.value : (type as any).text) === "";
-}
-
-/** Matches `&&` and `||` operators. */
-function isBooleanBinaryExpression(node: ts.Expression): boolean {
-    return node.kind === ts.SyntaxKind.BinaryExpression && binaryBooleanExpressionKind(node as ts.BinaryExpression) !== undefined;
-}
 
 function binaryBooleanExpressionKind(node: ts.BinaryExpression): "&&" | "||" | undefined {
     switch (node.operatorToken.kind) {
