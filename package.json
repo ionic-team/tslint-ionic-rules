@@ -35,7 +35,7 @@
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@types/node": "^10.9.4",
+    "@types/node": "^11.9.4",
     "tslint-eslint-rules": "^5.3.1"
   },
   "devDependencies": {
